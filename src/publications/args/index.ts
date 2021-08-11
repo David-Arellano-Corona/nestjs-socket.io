@@ -1,0 +1,1 @@
+export { PublicationDetail } from './publication.detail';
