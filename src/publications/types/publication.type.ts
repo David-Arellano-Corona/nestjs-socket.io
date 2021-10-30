@@ -10,4 +10,7 @@ export class PublicationType{
 
     @Field()
     createdAt:string;
+
+    @Field()
+    id:string;
 }

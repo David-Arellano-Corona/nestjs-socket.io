@@ -1,23 +1,22 @@
-import { Module } from '@nestjs/common';
-import { JwtModule } from '@nestjs/jwt';
-import { MongooseModule } from '@nestjs/mongoose';
+import { Module, forwardRef } from '@nestjs/common';
 import { LoginResolver } from './resolvers';
 import { GlobalModule } from '../common/global.module';
-import { JWT } from '../common/jwt';
-import { User, UserSchema } from '../users/db/user.schema';
+import { UsersModule } from '../users/users.module';
+import { SocketHandlerModule } from '../socket-handler/socket-handler.module';
 import { AuthService } from './services/auth.service';
-import { UserRepository } from '../users/db/user.repository';
 
 
 
 @Module({
-    
-    imports:[
-        MongooseModule.forFeature([
-            { name:User.name, schema:UserSchema }
-        ]),
-        GlobalModule  
+
+    imports: [
+        GlobalModule,
+        forwardRef(() => UsersModule),
+        forwardRef(() => SocketHandlerModule)
     ],
-    providers:[LoginResolver, AuthService, UserRepository],
+    providers: [
+        LoginResolver,
+        AuthService,
+    ],
 })
-export class AuthModule {}
+export class AuthModule { }

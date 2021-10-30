@@ -1,0 +1,1 @@
+export { FriendshipInput } from './friendship.input';

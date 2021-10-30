@@ -9,7 +9,7 @@ export class Publication {
     @Prop()
     text:string;
 
-    @Prop({ default: new Date() })
+    @Prop({ default: new Date().toISOString() })
     createdAt:Date;
 
     @Prop({ type:SchemaType.Types.ObjectId, ref:'User' })

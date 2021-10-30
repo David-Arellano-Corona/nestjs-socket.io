@@ -7,6 +7,8 @@ import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { PublicationsModule } from './publications/publications.module';
 import { CommentsModule } from './comments/comments.module';
+import { FriendshipModule } from './friendship/friendship.module';
+import { SocketHandlerModule } from './socket-handler/socket-handler.module';
 
 @Module({
   imports: [
@@ -22,8 +24,10 @@ import { CommentsModule } from './comments/comments.module';
     AuthModule,
     UsersModule,
     PublicationsModule,
-    CommentsModule
-  ],
+    CommentsModule,
+    FriendshipModule,
+    SocketHandlerModule
+  ]
 })
 export class AppModule {
   

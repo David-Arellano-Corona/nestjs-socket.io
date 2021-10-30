@@ -11,7 +11,7 @@ export class JWT {
         return this.jwtService.sign(payload);
     }
 
-    decode(token:string){
+    decode(token:string):any{
         return this.jwtService.decode(token);
     }
 }

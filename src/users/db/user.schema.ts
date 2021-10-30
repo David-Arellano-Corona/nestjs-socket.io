@@ -29,6 +29,9 @@ export class User{
 
     @Prop({ type:String })
     gender:Gender;
+
+    @Prop({ default:"" })
+    socketid:string;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);

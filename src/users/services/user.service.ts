@@ -32,4 +32,5 @@ export class UserService {
       .then((_) => this.register());
     return user;
   }
+
 }

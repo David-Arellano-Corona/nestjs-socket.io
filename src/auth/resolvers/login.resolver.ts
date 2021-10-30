@@ -17,9 +17,8 @@ export class LoginResolver{
     
     @Mutation(returns => TokenSchema)
     async login(@Args('loginInput') loginInput:LoginInput){
-        console.log(loginInput)
+        
         const jwt = await this.authService.login(loginInput)
-        console.log(jwt)
         return jwt;
     }
 
